@@ -43,4 +43,3 @@ if __name__ == '__main__':
     # get real number from the second line, use map(int, ...) to transfer from string into integer
     input_numbers = list(map(int, input().split())) # read numbers and convert to a list of integers
     print(max_pairwise_product_v2(input_numbers)) # print the result
-
