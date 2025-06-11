@@ -1,4 +1,5 @@
-def max_pairwise_product(numbers):
+# Time complexity of version 1: O(n2)
+def max_pairwise_product_v1(numbers):
 
     n = len(numbers) #lenth of the list
     max_product = 0 #keep track of the maximum product found so far
@@ -13,6 +14,25 @@ def max_pairwise_product(numbers):
 
     return max_product
 
+# Time complexity of version 1: O(n)
+def max_pairwise_product_v2(numbers):
+    n =  len(numbers)
+
+    # Find the index of the largest nubmer
+    first = 0
+    for i in range(1, n):
+        if numbers[i] > numbers[first]:
+            index1 = i
+    
+    # Find the index of the second largest number
+    # use sentinel value -1, to label second largest number hasn't been marked
+    second = -1
+    for i in range(n):
+        if i != second:
+            if second == -1 or numbers[i] > numbers[second]:
+                second = i
+    return numbers[first] * numbers[second]
+
 
 if __name__ == '__main__':
     # read the first line of the input, i.e. the counting number of the next line.
@@ -22,4 +42,5 @@ if __name__ == '__main__':
 
     # get real number from the second line, use map(int, ...) to transfer from string into integer
     input_numbers = list(map(int, input().split())) # read numbers and convert to a list of integers
-    print(max_pairwise_product(input_numbers)) # print the result
+    print(max_pairwise_product_v2(input_numbers)) # print the result
+
