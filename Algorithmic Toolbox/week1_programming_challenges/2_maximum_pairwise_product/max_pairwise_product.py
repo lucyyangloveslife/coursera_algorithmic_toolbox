@@ -22,13 +22,13 @@ def max_pairwise_product_v2(numbers):
     first = 0
     for i in range(1, n):
         if numbers[i] > numbers[first]:
-            index1 = i
+            first= i
     
     # Find the index of the second largest number
     # use sentinel value -1, to label second largest number hasn't been marked
     second = -1
     for i in range(n):
-        if i != second:
+        if i != first:
             if second == -1 or numbers[i] > numbers[second]:
                 second = i
     return numbers[first] * numbers[second]
