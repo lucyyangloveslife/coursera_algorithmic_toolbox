@@ -11,7 +11,6 @@ def lcm(a, b):
 # this line should never be reached for positive integers
     assert False
 
-
 if __name__ == '__main__':
     # read two interger from input
     a, b = map(int, input().split())

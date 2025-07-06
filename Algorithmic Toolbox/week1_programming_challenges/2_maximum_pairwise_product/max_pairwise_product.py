@@ -14,7 +14,7 @@ def max_pairwise_product_v1(numbers):
 
     return max_product
 
-# Time complexity of version 1: O(n)
+# Time complexity of version 2: O(n)
 def max_pairwise_product_v2(numbers):
     n =  len(numbers)
 
